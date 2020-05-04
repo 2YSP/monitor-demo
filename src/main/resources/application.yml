@@ -1,0 +1,37 @@
+server:
+  port: 8848
+spring:
+  application:
+    name: monitor-demo
+
+security:
+  user:
+    name: admin
+    password: 1234
+  basic:
+    enabled: true
+    # 安全路径列表，逗号分隔，此处只针对/admin路径进行认证
+    path: /admin
+
+# actuator暴露接口的前缀
+management:
+  context-path: /admin
+  # actuator暴露接口使用的端口，为了和api接口使用的端口进行分离
+  port: 8888
+  security:
+    enabled: true
+    roles: SUPERUSER
+#endpoints:
+#  actuator:
+#    enabled: true
+#  health:
+#    enabled: true
+#    sensitive: false
+#  metrics:
+#    enabled: true
+#    sensitive: false
+
+
+
+
+
